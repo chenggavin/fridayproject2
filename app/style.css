@@ -1,7 +1,42 @@
+
+
+
+body {
+	color:white;
+	background-color: #383A3F;
+}
+
+* {
+	margin-top: 30px;
+}
+
+
 .showing {
 	display: none;
 }
 
 .houseName {
 	text-align: center;
+}
+
+.s {
+	color:green;
+
+}
+
+.g {
+	color: #ff2400;
+
+}
+
+.r {
+	color:#4F86C6;
+}
+
+.h {
+	color: yellow;
+}
+
+.hogwarts {
+	text-align: left;
 }

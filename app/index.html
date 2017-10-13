@@ -16,15 +16,15 @@
         
         <div 
             is="temphouse"
-            
+            v-bind:crest="currenthouse.crest"
             v-bind:showstuff="showstuff"
             v-bind:showing="currenthouse.showing"
             v-bind:message="message"
             v-bind:name="houses[0].name"
             v-bind:currenthouse="currenthouse"
             v-bind:description="currenthouse.description"
-            v-bind:currenthouse.showing="currenthouse.showing"
             v-bind:currenthouse.name="currenthouse.name"
+            v-bind:id="currenthouse.id"
             >
         
         </div>
@@ -35,22 +35,19 @@
 
 
 
-
-
-
     <template id="temphouse">
 
         <div>
-        {{ message }}
+        <header><img src="../images/hogwarts.jpeg"><header>
 
-        <p class="houseName">you are.... <span style="font-size: 50px">{{ currenthouse }}!!<span><p>
+        <p>you are.... <span v-bind:class="id" style="font-size:50px">{{ currenthouse }}!!<span><p>
+        <!--     <img src="crest"> -->
         
-        <h5> Why {{ currenthouse.name }} you might ask?? <br>
-            <button class='btn btn default btn-sm' v-on:click="showstuff">Find Out</button>
+        <h5> Why {{ currenthouse }} you might ask?? <br>
+            <button class='btn btn-secondary btn-sm' v-on:click="showstuff">Find Out</button>
         </h5>
 
-        <p v-if="showing"> You value <span> {{ description }}  </span> above all.</p>
-        <!-- Create colors for the description  -->     
+        <p v-if="showing" > You value <span v-bind:class="id"> {{ description }}  </span> above all.</p>   
         </div>
 
     </template>
