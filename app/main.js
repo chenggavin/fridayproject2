@@ -2,7 +2,7 @@ Vue.component ('temphouse', {
 
 	template: "#temphouse",
 
-	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 'id']
+	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 'id','crest']
 });
 
 
@@ -15,6 +15,7 @@ var sortinghat = new Vue({
 
 	data: {
 
+
 		message: 'this works',
 
 		currenthouse: 'saf',
@@ -26,7 +27,7 @@ var sortinghat = new Vue({
 		      	description: 'Bravery, Daring, Nerve, and Chivalry',
 		      	showing: false,
 		      	id: 'g',
-		      	crest:"http://vignette2.wikia.nocookie.net/harrypotter/images/6/6b/Gryffindorcrest.png/revision/latest?cb=20110308010135"
+		      	crest:"./images/Gryffindorcrest.png"
 		      	// color:scarlet
 		    },
 		    {
@@ -34,18 +35,21 @@ var sortinghat = new Vue({
 		      	description: 'Hard Work, Dedication, Patience, Loyalty, and Fair Play',
 		      	showing: false,
 		      	id: 'h',
+		      	crest:"./images/Huff.png"
 		    },
 		    {
 		      	name: 'Ravenclaw',
 		      	description: 'Intelligence, Knowledge, and Wit',
 		      	showing: false,
 		      	id: 'r',
+		      	crest:"./images/rav.png"
 		    },
 		    {
 		      	name: 'Slytherin',
 		      	description: 'Ambition, Cunning and Resourcefulness',
 		      	showing:false,
 		      	id:'s',
+		      	crest:"./images/sly.png"
 		    }
 
 		  ],
@@ -71,7 +75,7 @@ var sortinghat = new Vue({
 
 
 		this.currenthouse = this.houses[Math.floor(Math.random() * this.houses.length)];
-		console.log(this.curenthouse);
+		console.log(this.crest);
 	}
 
 		
