@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Sorting Hat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="container">
+
+
+    <div id="main">
+       
+        
+        <div 
+            is="temphouse"
+            
+            v-bind:showstuff="showstuff"
+            v-bind:showing="currenthouse.showing"
+            v-bind:message="message"
+            v-bind:name="houses[0].name"
+            v-bind:currenthouse="currenthouse"
+            v-bind:description="currenthouse.description"
+            v-bind:currenthouse.showing="currenthouse.showing"
+            v-bind:currenthouse.name="currenthouse.name"
+            >
+        
+        </div>
+
+  
+    
+    </div>
+
+
+
+
+
+
+    <template id="temphouse">
+
+        <div>
+        {{ message }}
+
+        <p class="houseName">you are.... <span style="font-size: 50px">{{ currenthouse }}!!<span><p>
+        
+        <h5> Why {{ currenthouse.name }} you might ask?? <br>
+            <button class='btn btn default btn-sm' v-on:click="showstuff">Find Out</button>
+        </h5>
+
+        <p v-if="showing"> You value <span> {{ description }}  </span> above all.</p>
+        <!-- Create colors for the description  -->     
+        </div>
+
+    </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
