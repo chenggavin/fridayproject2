@@ -40,7 +40,7 @@ var sortinghat = new Vue({
 		      	description: 'Intelligence, Knowledge, and Wit',
 		      	showing: false,
 		      	id: 'r',
-		      	crest:"./images/rav.png"
+		      	crest:"./images/Rav.png"
 		    },
 		    {
 		      	name: 'Slytherin',
