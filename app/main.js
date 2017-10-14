@@ -4,7 +4,7 @@ Vue.component ('temphouse', {
 
 	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 
 	'id','crest', "showhouse", 'isHouseShowing', 'startsort', 'welcome', 'startbutton',
-	'why']
+	'why', 'changeHouse', 'potentialHouse', 'doubtshow', 'doubtcounter']
 });
 
 
@@ -14,6 +14,10 @@ var sortinghat = new Vue({
 
 
 	data: {
+
+		doubtcounter: 0,
+
+		doubtshow: false,
 
 		why: true,
 
@@ -68,7 +72,11 @@ var sortinghat = new Vue({
 		showstuff: function() {
 			this.currenthouse.showing = true;
 			this.why=false;
-			console.log('showstuff is hit');
+			if ( this.doubtcounter !== 1){
+				this.doubtshow=true;
+			}
+			this.doubtcounter = 1;
+			
 		},
 
 		showhouse:function() {
@@ -80,20 +88,37 @@ var sortinghat = new Vue({
 		startsort: function () {
 			this.welcome = true;
 			this.startbutton = false;
-			setTimeout(function () { this.showhouse() }.bind(this), 5000);
+			setTimeout(function () { this.showhouse(); }.bind(this), 10000);
 		},
 
-	    loadContacts: function() {
+	    loadHouse: function() {
 
-	     	this.currenthouse = localStorage.getItem('currenthouse');
+	     	this.currenthouse = localStorage.getItem('this.currenthouse');
 	     
 
 	    },
 
-		saveContacts: function() {
+		saveHouse: function() {
 
-		    localStorage.setItem('currenthouse', JSON.stringify(this.currenthouse));
+		    localStorage.setItem('this.currenthouse', JSON.stringify(this.currenthouse));
 
+		},
+
+		changeHouse: function () {
+
+			for (i=0; i<100;i++) {
+				var potentialHouse = this.houses[Math.floor(Math.random() * this.houses.length)];
+				if (this.currenthouse !== potentialHouse) {
+				this.currenthouse = potentialHouse;
+				this.why=true;
+				this.showing = false;
+				this.doubtshow=false;
+				break;
+				}
+
+			
+			} 
+					
 		},
 
 	},

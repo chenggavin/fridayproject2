@@ -54,21 +54,39 @@ h5 {
 }
 
 
-.btn {
+.why {
 	margin: 30px;
-	border: solid white 3px;
+	border: solid white 1px;
 }
 
+@keyframes example {
+    0% {color: #383A3F;}
+    50% {color: white;}
+    100% {color: #383A3F;}
+}
 
 .welcome {
 	margin-top: 30px;
-	font-size: 20px;
+	font-size: 20px; 
+	width: 100px;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 10.2s;
+
 }
 
 .sortinghat {
 	float: right;
 
 }
+
+.doubt{
+	float:right;
+}
+
+
+
+/* The element to apply the animation to */
 
 
 
