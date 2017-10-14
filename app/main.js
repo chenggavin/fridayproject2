@@ -2,7 +2,9 @@ Vue.component ('temphouse', {
 
 	template: "#temphouse",
 
-	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 'id','crest']
+	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 
+	'id','crest', "showhouse", 'isHouseShowing', 'startsort', 'welcome', 'startbutton',
+	'why']
 });
 
 
@@ -13,10 +15,15 @@ var sortinghat = new Vue({
 
 	data: {
 
+		why: true,
 
-		message: 'this works',
+		startbutton: true,
 
-		currenthouse: 'saf',
+		isHouseShowing: false,
+
+		welcome: false,
+
+		currenthouse: '',
 
 	 	houses: [
 
@@ -57,10 +64,23 @@ var sortinghat = new Vue({
 
 
 	methods: {
-
+		
 		showstuff: function() {
 			this.currenthouse.showing = true;
+			this.why=false;
 			console.log('showstuff is hit');
+		},
+
+		showhouse:function() {
+			this.isHouseShowing = true;
+			this.welcome = false;
+
+		},
+
+		startsort: function () {
+			this.welcome = true;
+			this.startbutton = false;
+			setTimeout(function () { this.showhouse() }.bind(this), 5000);
 		},
 
 	    loadContacts: function() {
@@ -74,19 +94,20 @@ var sortinghat = new Vue({
 
 		    localStorage.setItem('currenthouse', JSON.stringify(this.currenthouse));
 
-	
-
 		},
-	},
 
+	},
 
 	beforeMount: function() {
 
 
 		this.currenthouse = this.houses[Math.floor(Math.random() * this.houses.length)];
-		console.log(this.crest);
-	}
+		
+	},
 
+
+
+	
 		
 
 

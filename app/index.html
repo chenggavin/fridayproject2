@@ -12,10 +12,14 @@
 <body class="container">
 
 
-    <div id="main">
-       
-        
+    <div id="main">  
         <div 
+            v-bind:why="why"
+            v-bind:startbutton="startbutton"
+            v-bind:welcome="welcome"
+            v-bind:startsort="startsort"
+            v-bind:is-house-showing="isHouseShowing"
+            v-bind:showhouse="showhouse"    
             is="temphouse"
             v-bind:crest="currenthouse.crest"
             v-bind:showstuff="showstuff"
@@ -25,31 +29,32 @@
             v-bind:currenthouse="currenthouse"
             v-bind:description="currenthouse.description"
             v-bind:currenthouse.name="currenthouse.name"
-            v-bind:id="currenthouse.id"
-            >
-        
+            v-bind:id="currenthouse.id">
         </div>
-
-  
-    
     </div>
 
 
 
     <template id="temphouse">
-
-        <div> 
-
-        <p>you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!<span><p>
-        <!--     <img src="crest"> -->
+    <div>
         
-        <h5> Why {{ currenthouse }} you might ask?? <br>
-            <button class='btn btn-secondary btn-sm' v-on:click="showstuff">Find Out</button>
-        </h5>
+       <button class="btn btn-secondary" v-if="startbutton" v-on:click="startsort">Let's begin..</button>
+        <span class="welcome" v-if="welcome">Hmmm . .  . <br><br>This is odd. . .<br><br> Yes! THIS IS IT!.....<br><br><br> Welcome To....</span>
+        <div v-if="isHouseShowing"> 
 
-        <p v-if="showing" > You value <span v-bind:class="id"> {{ description }}  </span> above all.</p>   
-        <div align="center"><img v-bind:src="crest"></div>
+            <p> <span v-bind:class="id" style="font-size:80px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
+
+            
+            <h5> Why <i style="font-weight: bold">{{ currenthouse }}</i> you might ask?? <br>
+                <button v-if="why" class="btn btn-secondary btn-lg" v-on:click="showstuff">Find Out</button>
+            </h5>
+
+            <p v-if="showing">You value <span v-bind:class="id" style="font-size: 25px"> {{ description }}  </span> above all.</p>   
+            <div align="center"><img v-bind:src="crest"></div>
         </div>
+            <img class="sortinghat" src="./images/sortinghat.png"><br>
+    </div>
+
 
     </template>
 
