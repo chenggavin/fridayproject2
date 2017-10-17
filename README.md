@@ -1,4 +1,4 @@
-# Sorting Hate
+# Sorting Hat
 
 ## Creating a Harry Potter Sorting Hat
 
