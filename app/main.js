@@ -2,7 +2,9 @@ Vue.component ('temphouse', {
 
 	template: "#temphouse",
 
-	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 'id','crest']
+	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 
+	'id','crest', "showhouse", 'isHouseShowing', 'startsort', 'welcome', 'startbutton',
+	'why', 'changeHouse', 'potentialHouse', 'doubtshow', 'doubtcounter', 'saveHouse', 'loadHouse']
 });
 
 
@@ -13,10 +15,19 @@ var sortinghat = new Vue({
 
 	data: {
 
+		doubtcounter: 0,
 
-		message: 'this works',
+		doubtshow: false,
 
-		currenthouse: 'saf',
+		why: true,
+
+		startbutton: true,
+
+		isHouseShowing: false,
+
+		welcome: false,
+
+		currenthouse: '',
 
 	 	houses: [
 
@@ -57,36 +68,71 @@ var sortinghat = new Vue({
 
 
 	methods: {
-
+		
 		showstuff: function() {
 			this.currenthouse.showing = true;
-			console.log('showstuff is hit');
+			this.why=false;
+			if ( this.doubtcounter !== 1){
+				this.doubtshow=true;
+			}
+			this.doubtcounter = 1;
+			
 		},
 
-	    loadContacts: function() {
+		showhouse:function() {
+			this.isHouseShowing = true;
+			this.welcome = false;
 
-	     	this.currenthouse = localStorage.getItem('currenthouse');
+		},
+
+		startsort: function () {
+			this.welcome = true;
+			this.startbutton = false;
+			setTimeout(function () { this.showhouse(); }.bind(this), 15000);
+		},
+
+	    loadHouse: function() {
+
+	     	this.currenthouse = localStorage.getItem('this.currenthouse');
 	     
 
 	    },
 
-		saveContacts: function() {
+		saveHouse: function() {
 
-		    localStorage.setItem('currenthouse', JSON.stringify(this.currenthouse));
-
-	
+		    localStorage.setItem('this.currenthouse', JSON.stringify(this.currenthouse));
 
 		},
-	},
 
+		changeHouse: function () {
+
+			for (i=0; i<100;i++) {
+				var potentialHouse = this.houses[Math.floor(Math.random() * this.houses.length)];
+				if (this.currenthouse !== potentialHouse) {
+				this.currenthouse = potentialHouse;
+				this.why=true;
+				this.showing = false;
+				this.doubtshow=false;
+				break;
+				}
+
+			
+			} 
+					
+		},
+
+	},
 
 	beforeMount: function() {
 
 
 		this.currenthouse = this.houses[Math.floor(Math.random() * this.houses.length)];
-		console.log(this.crest);
-	}
+		
+	},
 
+
+
+	
 		
 
 

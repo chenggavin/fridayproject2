@@ -1,4 +1,7 @@
-
+* {
+	margin: 0px;
+	border: 0px;
+}
 
 
 body {
@@ -6,13 +9,11 @@ body {
 	background-color: #383A3F;
 }
 
-* {
-	margin-top: 30px;
-}
+
 
 p {
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: 'Cinzel', serif;
 }
 
@@ -53,12 +54,76 @@ h5 {
 }
 
 
-.btn {
+.why {
 	margin: 30px;
+	border: solid white 1px;
+}
+
+
+.welcome {
+	margin-top: 30px;
+	font-size: 20px; 
+
+}
+
+.sortinghat {
+	float: right;
+
+}
+
+.doubt{
+	float:right;
 }
 
 
 
+.hmm {
+    animation-name: hmm;
+    animation-duration: 17s;
+}
+@keyframes hmm {
+   	0% {color: #383A3F;}
+    10% {color: white;}
+    25% {color: #383A3F;}
+    100% {color: #383A3F;}
+}
+
+.odd {
+    animation-name: odd;
+    animation-duration: 17s;
+}
+@keyframes odd {
+    0% {color: #383A3F;}
+    10% {color: #383A3F;}
+    20% {color: white;}
+    50% {color: #383A3F;}
+    100% {color: #383A3F;}
+}
+
+.yes {
+    animation-name: yes;
+    animation-duration: 17s;
+}
+@keyframes yes {
+	0% {color: #383A3F;}
+	20% {color: #383A3F;}
+    40% {color: white;}
+    75% {color: #383A3F;}
+    100% {color: #383A3F;}
+
+}
+
+.welcometo {
+    animation-name: welcome;
+    animation-duration: 17s;	
+}
+@keyframes welcome {
+  	0% {color: #383A3F;}
+  	50% {color: #383A3F;}
+    70% {color: white;}
+    100% {color: #383A3F;}
+
+}
 
 
 
