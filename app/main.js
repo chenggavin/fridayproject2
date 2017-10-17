@@ -4,7 +4,7 @@ Vue.component ('temphouse', {
 
 	props: ['name', 'description', 'message', "currenthouse", "showing", "showstuff", 
 	'id','crest', "showhouse", 'isHouseShowing', 'startsort', 'welcome', 'startbutton',
-	'why', 'changeHouse', 'potentialHouse', 'doubtshow', 'doubtcounter']
+	'why', 'changeHouse', 'potentialHouse', 'doubtshow', 'doubtcounter', 'saveHouse', 'loadHouse']
 });
 
 
@@ -88,7 +88,7 @@ var sortinghat = new Vue({
 		startsort: function () {
 			this.welcome = true;
 			this.startbutton = false;
-			setTimeout(function () { this.showhouse(); }.bind(this), 10000);
+			setTimeout(function () { this.showhouse(); }.bind(this), 15000);
 		},
 
 	    loadHouse: function() {

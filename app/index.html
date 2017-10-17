@@ -41,7 +41,11 @@
     <div>
         
         <button class="btn btn-secondary" v-if="startbutton" v-on:click="startsort">Let's begin..</button>
-        <span class="welcome" v-if="welcome">Hmmm . .  . <br><br>This is odd. . .<br><br> Yes! THIS IS IT!.....<br><br><br> Welcome To....</span>
+        <div class="welcome" v-if="welcome">
+            <span class="hmm">hmmm  <br><br><br></span>
+            <span class="odd">This is odd. . .<br><br><br></span>
+            <span class="yes">Yes! THIS IS IT!. . . . .<br><br><br></span>
+            <span class="welcometo"> WELCOME TO. . . . . . . .</span></div>
         <div v-if="isHouseShowing"> 
 
             <p> <span v-bind:class="id" style="font-size:80px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
