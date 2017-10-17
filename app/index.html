@@ -45,21 +45,27 @@
             <span class="hmm">hmmm  <br><br><br></span>
             <span class="odd">This is odd. . .<br><br><br></span>
             <span class="yes">Yes! THIS IS IT!. . . . .<br><br><br></span>
-            <span class="welcometo"> WELCOME TO. . . . . . . .</span></div>
-        <div v-if="isHouseShowing"> 
-
-            <p> <span v-bind:class="id" style="font-size:80px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
-
-            
-            <h5> Why <i style="font-weight: bold">{{ currenthouse }}</i> you might ask?? <br>
-                <button v-if="why" class=" why btn btn-secondary btn-md" v-on:click="showstuff">find out why..</button>
-            </h5>
-
-            <p v-if="showing">You value <span v-bind:class="id" style="font-size: 25px"> {{ description }}  </span> above all.</p>   
-            <div align="center"><img v-bind:src="crest"></div>
+            <span class="welcometo"> WELCOME TO. . . . . . . .</span>
         </div>
+        
+        <div v-if="isHouseShowing"> 
+            <div> 
+
+                <p>you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
+                <!--     <img src="crest"> -->
+                
+                <h5> Why {{ currenthouse }} you might ask?? <br>
+                    <button class="btn btn-secondary btn-sm" v-on:click="showstuff">Find Out</button>
+                </h5>
+
+                <p v-if="showing" > You value <span v-bind:class="id"> {{ description }}  </span> above all.</p>   
+                <div align="center"><img v-bind:src="crest"></div>
+
+
+            </div>
             <button class="doubt btn btn-sm" v-on:click="changeHouse" v-if="doubtshow"> Having doubts? </button>
             <img class="sortinghat" src="./images/sortinghat.png"><br> 
+        </div>
     </div>
 
 
