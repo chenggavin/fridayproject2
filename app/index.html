@@ -40,15 +40,16 @@
 
         <div> 
 
-        <p>you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!<span><p>
+        <p>you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
         <!--     <img src="crest"> -->
         
         <h5> Why {{ currenthouse }} you might ask?? <br>
-            <button class='btn btn-secondary btn-sm' v-on:click="showstuff">Find Out</button>
+            <button class="btn btn-secondary btn-sm" v-on:click="showstuff">Find Out</button>
         </h5>
 
         <p v-if="showing" > You value <span v-bind:class="id"> {{ description }}  </span> above all.</p>   
         <div align="center"><img v-bind:src="crest"></div>
+
         </div>
 
     </template>
