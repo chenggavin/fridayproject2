@@ -39,23 +39,22 @@
 
     <template id="temphouse">
     <div>
-        
-        <button class="btn btn-secondary" v-if="startbutton" v-on:click="startsort">Let's begin..</button>
-        <div class="welcome" v-if="welcome">
-            <span class="hmm">hmmm  <br><br><br></span>
-            <span class="odd">This is odd. . .<br><br><br></span>
-            <span class="yes">Yes! THIS IS IT!. . . . .<br><br><br></span>
-            <span class="welcometo"> WELCOME TO. . . . . . . .</span>
+        <div class="begin">
+            <button class="btn btn-secondary btn-lg" v-if="startbutton" v-on:click="startsort">Let's begin..</button>
+            <div class="welcome" v-if="welcome">
+                <span class="hmm">hmmm  <br><br><br></span>
+                <span class="odd">can this be?. . .<br><br><br></span>
+                <span class="yes">Yes! THIS IS IT!. . . . .<br><br><br></span>
+                <span class="welcometo"> WELCOME TO. . . . . . . .</span>
+            </div>
         </div>
         
         <div v-if="isHouseShowing"> 
             <div> 
-
-                <p>you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
-                <!--     <img src="crest"> -->
+                <p class="houseTitle">you are.... <span v-bind:class="id" style="font-size:100px; font-family: 'Rye', cursive;">{{ currenthouse }}!!</span></p>
                 
                 <h5> Why {{ currenthouse }} you might ask?? <br>
-                    <button class="btn btn-secondary btn-sm" v-on:click="showstuff">Find Out</button>
+                    <button class="btn btn-secondary btn-sm findout" v-on:click="showstuff">Find Out</button>
                 </h5>
 
                 <p v-if="showing" > You value <span v-bind:class="id"> {{ description }}  </span> above all.</p>   
@@ -64,8 +63,8 @@
 
             </div>
             <button class="doubt btn btn-sm" v-on:click="changeHouse" v-if="doubtshow"> Having doubts? </button>
-            <img class="sortinghat" src="./images/sortinghat.png"><br> 
         </div>
+        <img class="sortinghat" src="./images/sortinghat.png"><br> 
     </div>
 
 

@@ -22,13 +22,16 @@ h5 {
 	font-family: 'Cinzel', serif;
 }
 
-
-.showing {
-	display: none;
+.begin {
+    margin-left:15%;
+    margin-top: 5%;
 }
 
 .houseName {
 	text-align: center;
+}
+.houseTitle {
+
 }
 
 .s {
@@ -55,8 +58,11 @@ h5 {
 
 
 .why {
-	margin: 30px;
 	border: solid white 1px;
+}
+
+.findout {
+    margin:5%;
 }
 
 
